@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingDung | Profile Template</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container light-style flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-4">
+            profile settings
+        </h4>
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">
+                            General
+                        </a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">
+                            Change password
+                        </a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">
+                            Info
+                        </a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">
+                            Social links
+                        </a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">
+                            Connections
+                        </a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">
+                            Notifications
+                        </a>
+                        <!-- Add theme buttons -->
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-general">
+                            <div class="card-body media align-items-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
+                                    class="d-block ui-w-80">
+                                <div class="media-body ml-4">
+                                    <label class="btn btn-outline-primary">
+                                        Upload new photo
+                                        <input id="upload-input" type="file" class="account-settings-fileinput">
+                                    </label> &nbsp;
+                                    <button type="button" class="btn btn-default md-btn-flat"
+                                        onclick="resetProfilePic()">Reset</button>
+                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control mb-1" value>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="text" class="form-control mb-1" value>
+                                    <div class="alert alert-warning mt-3">
+                                        Your email is not confirmed. Please check your inbox.<br>
+                                        <a href="javascript:void(0)">Resend confirmation</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Company</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-change-password">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-info">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="bio">Bio</label>
+                                    <textarea class="form-control" id="bio" rows="5" placeholder="Write your bio here..."></textarea>
+                                </div>                                
+                                <div class="form-group">
+                                    <label class="form-label" for="birthday">Birthday</label>
+                                    <input type="date" class="form-control" id="birthday">
+                                </div>                                
+                                <div class="form-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="custom-select">
+                                        <option>India</option>
+                                        <option>USA</option>
+                                        <option selected>Canada</option>
+                                        <option>UK</option>
+                                        <option>Germany</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Contacts</h6>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="countryCode">
+                                            <option value="+1">+1 (USA)</option>
+                                            <option value="+1">+1 (Canada)</option>
+                                            <option value="+44">+44 (UK)</option>
+                                            <option value="+49">+49 (Germany)</option>
+                                            <option value="+33">+33 (France)</option>
+                                            <option value="+91">+91 (India)</option>
+                                            <option value="+61">+61 (Australia)</option>
+                                            <!-- Add more country codes as needed -->
+                                        </select>
+                                        <input type="text" class="form-control" id="phone" placeholder="123 456 7891">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="website">Website</label>
+                                    <input type="url" class="form-control" id="website" placeholder="https://example.com">
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-social-links">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Twitter</label>
+                                    <input type="text" class="form-control" value="https://twitter.com/user">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Facebook</label>
+                                    <input type="text" class="form-control" value="https://www.facebook.com/user">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Google+</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">LinkedIn</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Instagram</label>
+                                    <input type="text" class="form-control" value="https://www.instagram.com/user">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-connections">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-twitter">Connect to
+                                    <strong>Twitter</strong></button>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <h5 class="mb-2">
+                                    <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i
+                                            class="ion ion-md-close"></i> Remove</a>
+                                    <i class="ion ion-logo-google text-google"></i>
+                                    You are connected to Google:
+                                </h5>
+                                <a href="/cdn-cgi/l/email-protection" class="_cf_email_"
+                                    data-cfemail="f9979498818e9c9595b994989095d79a9694">[email&#160;protected]</a>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-facebook">Connect to
+                                    <strong>Facebook</strong></button>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-instagram">Connect to
+                                    <strong>Instagram</strong></button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-notifications">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Activity</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone comments on my article</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone answers on my forum
+                                            thread</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone follows me</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Application</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">News and announcements</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Weekly product updates</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Weekly blog digest</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="text-right mt-3">
+            <button type="button" class="btn btn-default">Save changes</button>&nbsp;
+            <button type="button" class="btn btn-default">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        let isOnline = true; // For example, assuming the user is online by default
+
+    // Function to toggle theme
+            function toggleTheme(theme) {
+                const html = document.querySelector('html');
+                switch (theme) {
+                    case 'light':
+                        html.classList.remove('dark-style');
+                        html.classList.add('light-style');
+                        break;
+                    case 'dark':
+                        html.classList.remove('light-style');
+                        html.classList.add('dark-style');
+                        break;
+                    case 'system':
+                        html.classList.remove('light-style', 'dark-style');
+                        break;
+                    default:
+                        break;
+                }
+            };
+                // Event listener for file input change
+                document.getElementById('upload-input').addEventListener('change', function (event) {
+                    const profilePic = document.querySelector('.ui-w-80');
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            // Set profile picture background
+                            profilePic.src = e.target.result;
+                            // Save profile picture data to local storage
+                            localStorage.setItem('profilePic', e.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                // Function to reset profile picture
+                function resetProfilePic() {
+                    const profilePic = document.querySelector('.ui-w-80');
+                    profilePic.src = 'https://bootdey.com/img/Content/avatar/avatar1.png';
+                    // Remove profile picture data from local storage
+                    localStorage.removeItem('profilePic');
+                }
+
+                // Retrieve profile picture from local storage on page load
+                window.onload = function () {
+                    const storedProfilePic = localStorage.getItem('profilePic');
+                    if (storedProfilePic) {
+                        document.querySelector('.ui-w-80').src = storedProfilePic;
+                    }
+                };
+                // Theme toggling functionality
+                function toggleTheme(theme) {
+                    const html = document.querySelector('html');
+                    switch (theme) {
+                        case 'light':
+                            html.classList.remove('dark-style');
+                            html.classList.add('light-style');
+                            break;
+                        case 'dark':
+                            html.classList.remove('light-style');
+                            html.classList.add('dark-style');
+                            break;
+                        case 'system':
+                            html.classList.remove('light-style', 'dark-style');
+                            break;
+                        default:
+                            break;
+                    }
+                };
+            </script>
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script type="text/javascript"></script>
+</body>
+</html>
