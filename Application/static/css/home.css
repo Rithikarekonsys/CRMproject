@@ -1,4 +1,4 @@
-/* Universal Styles */
+/* Combined CSS styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,6 @@
 }
 
 body {
-    background-color: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
     align-items: center;
@@ -17,7 +16,113 @@ body {
     margin-top: 20px;
 }
 
-/* Container Styles */
+/* image */
+.ui-w-80 {
+    width: 80px !important;
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* Upload photo button */
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #053047;
+    background: transparent;
+    color: #26B4FF;
+}
+
+/* Allowed jpg text */
+.text-light {
+    color: #02070c !important;
+}
+
+/* connection Facebook */
+.btn-facebook {
+    border-color: rgba(0, 0, 0, 0);
+    background: #0f3ea3;
+    color: #fff;
+}
+
+/* connection Instagram */
+.btn-instagram {
+    border-color: rgba(0, 0, 0, 0);
+    background: #000;
+    color: #fff;
+}
+
+/* main background body */
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
+    background-color:  #f1f3f4;
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* to get bold when we select and stay in that page */
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;   
+}
+
+/* on select the button need t0 be transperant */
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+/* Profile settings */
 .container {
     background-color: #fff;
     border-radius: 30px;
@@ -47,6 +152,7 @@ body {
     margin: 15px 0 10px;
 }
 
+/* Buttons (reset, savechanges, cancel) */
 .container button {
     background-color: #512da8;
     color: #fff;
@@ -61,7 +167,7 @@ body {
     cursor: pointer;
 }
 
-.container button:hover {
+.container button:hover{
     background-color: #b6a5de;
     color: #000;
 }
@@ -99,7 +205,6 @@ body {
     transition: all 0.6s ease-in-out;
 }
 
-/* Form Container Styles */
 .sign-in {
     left: 0;
     width: 50%;
@@ -124,7 +229,35 @@ body {
     animation: move 0.6s;
 }
 
-/* Toggle Styles */
+@keyframes move {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
 .toggle-container {
     position: absolute;
     top: 0;
@@ -191,120 +324,31 @@ body {
     transform: translateX(200%);
 }
 
-/* Social Icons Styles */
-.social-icons {
-    margin: 20px 0;
+/* Icons */
+input[type="email"] {
+    padding-right: 30px; /* Adjust this value according to the size of your icon */
 }
 
-.social-icons a {
-    border: 1px solid #ccc;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-}
-
-/* Profile Settings */
-.ui-w-80 {
-    width: 80px !important;
-    height: 80px;
-    border-radius: 50%;
-}
-
-label.btn {
-    margin-bottom: 0;
-}
-
-.btn-outline-primary {
-    border-color: #053047;
-    background: transparent;
-    color: #26B4FF;
-}
-
-.text-light {
-    color: #02070c !important;
-}
-
-.btn-facebook {
-    border-color: rgba(0, 0, 0, 0);
-    background: #0f3ea3;
-    color: #fff;
-}
-
-.btn-instagram {
-    border-color: rgba(0, 0, 0, 0);
-    background: #000;
-    color: #fff;
-}
-
-.card {
-    background-clip: padding-box;
-    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
-    background-color: #f1f3f4;
-}
-
-.row-bordered {
-    overflow: hidden;
-}
-
-.account-settings-fileinput {
+.bx.bxs-envelope {
     position: absolute;
-    visibility: hidden;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
+    right: 50px; /* Adjust this value to position the icon properly */
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; /* Adjust the color of the icon */
+    pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
 }
 
-.account-settings-links .list-group-item.active {
-    font-weight: bold !important;
+/* CSS for the lock icon */
+input[type="password"] {
+    padding-right: 30px; /* Adjust this value according to the size of your icon */
+    position: relative; /* Ensure the input field is positioned relatively */
 }
 
-html:not(.dark-style) .account-settings-links .list-group-item.active {
-    background: transparent !important;
-}
-
-.account-settings-multiselect~.select2-container {
-    width: 100% !important;
-}
-
-.light-style .account-settings-links .list-group-item,
-.material-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.light-style .account-settings-links .list-group-item.active,
-.material-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
-}
-
-.dark-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-.dark-style .account-settings-links .list-group-item.active {
-    color: #fff !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-    color: #4E5155 !important;
-}
-
-/* Keyframes */
-@keyframes move {
-    0%,
-    49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%,
-    100% {
-        opacity: 1;
-        z-index: 5;
-    }
+.bx.bxs-lock-alt {
+    position: absolute;
+    right: 50px; /* Adjust this value to position the icon properly */
+    top: 60%;
+    transform: translateY(-50%);
+    color: black; /* Adjust the color of the icon */
+    pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
 }
