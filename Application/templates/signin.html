@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form action="{% url 'signin' %}" method="POST">
+                {% csrf_token %}
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" name="email" placeholder="Email">
+                <i class='bx bxs-envelope'></i>
+                <input type="password" name="password" placeholder="Password">
+                <i class='bx bxs-lock-alt'></i>
+                <a href="#" onclick="showResetPasswordForm()">Forgot Your Password?</a><br>
+                <button id="toggle-sign-in" type="submit">Sign In</button>
+                <p>Register with your personal details to use all site features</p>
+                <button type="button" onclick="redirectToCreate()" class="button-like">Sign Up</button>
+            </form>
+            
+        </div>
+        <div class="form-container reset-password" style="display: none;">
+            <form id="resetPasswordForm" onsubmit="resetPassword(event)">
+                <h1>Reset Password</h1>
+                <input type="email" id="resetEmail" placeholder="Enter your email">
+                <button>Reset Password</button>
+                <button type="button" onclick="cancelResetPassword()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle redirection -->
+    <script>
+        function redirectToCreate() {
+            window.location.href = "{% url 'create' %}";
+        }
+    </script>
+</body>
+</html>
