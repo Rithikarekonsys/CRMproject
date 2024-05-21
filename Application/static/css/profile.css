@@ -1,4 +1,4 @@
-        /* Combined CSS styles */
+        Combined CSS styles
         * {
             margin: 0;
             padding: 0;
@@ -71,7 +71,7 @@
         }
 /* on select the button need to be transperant */
         html:not(.dark-style) .account-settings-links .list-group-item.active {
-            background: #e9eefc;            
+            background: #83d0e7;            
         }
 
         .account-settings-multiselect~.select2-container {
