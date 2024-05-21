@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="{% url 'signin' %}" method="GET">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Username">
+                <i class='bx bxs-user'></i>
+                <input type="mail" placeholder="Email">
+                <i class='bx bx-envelope' ></i>
+                <input type="tel" placeholder="Mobile Number">
+                <i class='bx bxs-phone-call' ></i>
+                <input type="pass" placeholder="Password">
+                <i class='bx bxs-lock'></i>
+                <input type="password" placeholder="Confirm Password">
+                <i class='bx bxs-lock-open'></i>
+                <button id="toggle-sign-up">Sign Up</button>
+            </form>
+        </div>
+
+</body>
+</html>

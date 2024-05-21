@@ -1,9 +1,10 @@
-
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    text-align: center;
 }
 
 body {
@@ -16,123 +17,19 @@ body {
     margin-top: 20px;
 }
 
-
-.ui-w-80 {
-    width: 80px !important;
-    height: 80px;
-    border-radius: 50%;
-}
-
-
-label.btn {
-    margin-bottom: 0;
-}
-
-.btn-outline-primary {
-    border-color: #053047;
-    background: transparent;
-    color: #26B4FF;
-}
-
-
-.text-light {
-    color: #02070c !important;
-}
-
-
-.btn-facebook {
-    border-color: rgba(0, 0, 0, 0);
-    background: #0f3ea3;
-    color: #fff;
-}
-
-
-.btn-instagram {
-    border-color: rgba(0, 0, 0, 0);
-    background: #000;
-    color: #fff;
-}
-
-
-.card {
-    background-clip: padding-box;
-    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
-    background-color:  #f1f3f4;
-}
-
-.row-bordered {
-    overflow: hidden;
-}
-
-.account-settings-fileinput {
-    position: absolute;
-    visibility: hidden;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
-
-
-.account-settings-links .list-group-item.active {
-    font-weight: bold !important;   
-}
-
-
-html:not(.dark-style) .account-settings-links .list-group-item.active {
-    background: transparent !important;
-}
-
-.account-settings-multiselect~.select2-container {
-    width: 100% !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
-}
-
-.material-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-.material-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
-}
-
-.dark-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-.dark-style .account-settings-links .list-group-item.active {
-    color: #fff !important;
-}
-
-.light-style .account-settings-links .list-group-item.active {
-    color: #4E5155 !important;
-}
-
-.light-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
-}
-
-
 .container {
-    background-color: #fff;
+    background: linear-gradient(to left, #e2e2e2, #c9d6ff);
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 550px;
     max-width: 100%;
-    min-height: 480px;
+    height: 500px;
+    padding:10px 10px;
+
 }
+
 
 .container p {
     font-size: 14px;
@@ -142,7 +39,9 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 }
 
 .container span {
-    font-size: 12px;
+    font-size: 15px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container a {
@@ -164,7 +63,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 10px;
-    cursor: pointer;
+    cursor:pointer;
 }
 
 .container button:hover{
@@ -178,17 +77,17 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 }
 
 .container form {
-    background-color: #fff;
-    display: flex;
+    background: linear-gradient(to left, #e2e2e2, #c9d6ff);
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;
     height: 100%;
+    
 }
 
 .container input {
-    background-color: #c1cdcf;
+    background-color: #fef3fd;
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
@@ -198,56 +97,16 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     outline: none;
 }
 
-
-
-
-
-
 .form-container {
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
+    top:5%;
+    
 }
 
-.sign-in {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container.active .sign-in {
-    transform: translateX(100%);
-}
-
-.sign-up {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container.active .sign-up {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: move 0.6s;
-}
-
-@keyframes move {
-    0%,
-    49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%,
-    100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
+/* Social icons container */
 .social-icons {
     margin: 20px 0;
 }
@@ -263,77 +122,70 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     height: 40px;
 }
 
-.toggle-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    border-radius: 150px 0 0 100px;
-    z-index: 1000;
-}
-
-.container.active .toggle-container {
-    transform: translateX(-100%);
-    border-radius: 0 150px 100px 0;
-}
-
-.toggle {
-    background-color: #512da8;
-    height: 100%;
-    background: linear-gradient(to right, #5c6bc0, #512da8);
-    color: #fff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.container.active .toggle {
-    transform: translateX(50%);
-}
-
-.toggle-panel {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 30px;
-    text-align: center;
-    top: 0;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.toggle-left {
-    transform: translateX(-200%);
-}
-
-.container.active .toggle-left {
-    transform: translateX(0);
-}
-
-.toggle-right {
-    right: 0;
-    transform: translateX(0);
-}
-
-.container.active .toggle-right {
-    transform: translateX(200%);
-}
-
-.container a:hover{
+.social-icons a:hover {
     background-color: #b6a5de;
 }
 
-/* Icons */
+/* Input fields style */
+.input-field {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+    border-color: #333;
+}
+
+.input-field i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+
+.container.active .sign-up {
+    transform: translateX(-100%);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+
+.bx.bxs-user{
+    position: absolute;
+    right: 50px; /* Adjust this value to position the icon properly */
+    top: 31%;
+    transform: translateY(-10%);
+    color: black; /* Adjust the color of the icon */
+    pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
+}
+
+
 input[type="email"] {
     padding-right: 30px; /* Adjust this value according to the size of your icon */
 }
@@ -341,7 +193,7 @@ input[type="email"] {
 .bx.bxs-envelope {
     position: absolute;
     right: 50px; /* Adjust this value to position the icon properly */
-    top: 50%;
+    top: 33%;
     transform: translateY(-50%);
     color: black; /* Adjust the color of the icon */
     pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
@@ -356,27 +208,11 @@ input[type="password"] {
 .bx.bxs-lock-alt {
     position: absolute;
     right: 50px; /* Adjust this value to position the icon properly */
-    top: 60%;
+    top: 43%;
     transform: translateY(-50%);
     color: black; /* Adjust the color of the icon */
     pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
 }
-
-input[type="text"] {
-    padding-right: 30px; /* Adjust this value according to the size of your icon */
-    position: relative; /* Ensure the input field is positioned relatively */
-}
-
-.bx.bxs-user{
-    position: absolute;
-    right: 50px; /* Adjust this value to position the icon properly */
-    top: 37%;
-    transform: translateY(-10%);
-    color: black; /* Adjust the color of the icon */
-    pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
-}
-
-
 
 
 input[type="mail"] {
@@ -386,7 +222,7 @@ input[type="mail"] {
 .bx.bx-envelope{
     position: absolute;
     right: 50px; /* Adjust this value to position the icon properly */
-    top: 47%;
+    top: 41%;
     transform: translateY(-10%);
     color: black; /* Adjust the color of the icon */
     pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
@@ -399,7 +235,7 @@ input[type="pass"] {
 .bx.bxs-lock{
     position: absolute;
     right: 50px; /* Adjust this value to position the icon properly */
-    top: 68%;
+    top: 61%;
     transform: translateY(-10%);
     color: black; /* Adjust the color of the icon */
     pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
@@ -409,7 +245,7 @@ input[type="pass"] {
 .bx.bxs-lock-open{
     position: absolute;
     right: 50px; /* Adjust this value to position the icon properly */
-    top: 79%;
+    top: 71%;
     transform: translateY(-10%);
     color: black; /* Adjust the color of the icon */
     pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
@@ -423,15 +259,8 @@ input[type="tel"] {
 .bx.bxs-phone-call{
     position: absolute;
     right: 50px; /* Adjust this value to position the icon properly */
-    top: 58%;
+    top: 51%;
     transform: translateY(-10%);
     color: black; /* Adjust the color of the icon */
     pointer-events: none; /* Ensures the icon doesn't interfere with input interaction */
 }
-
-
-
-
-
-
-
