@@ -29,7 +29,7 @@
                 <i class='bx bxs-envelope'></i>
                 <input type="password" name="password" placeholder="Password">
                 <i class='bx bxs-lock-alt'></i>
-                <a href="#" onclick="showResetPasswordForm()">Forgot Your Password?</a><br>
+                <a href="#" onclick="showResetPasswordForm()">Forgot Your Password?</a><br><br>
                 <button id="toggle-sign-in" type="submit">Sign In</button>
                 <p>Register with your personal details to use all site features</p>
                 <button type="button" onclick="redirectToCreate()" class="button-like">Sign Up</button>
@@ -46,7 +46,6 @@
         </div>
     </div>
 
-    <!-- JavaScript to handle redirection -->
     <script>
         function redirectToCreate() {
             window.location.href = "{% url 'create' %}";

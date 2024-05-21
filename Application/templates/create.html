@@ -39,48 +39,5 @@
             </form>
         </div>
 
-    <script>
-        const signInButton = document.getElementById('toggle-sign-in');
-        const signUpButton = document.getElementById('toggle-sign-up');
-        const container = document.getElementById('container');
-    
-        signInButton.addEventListener('click', () => {
-            container.classList.remove('active');
-        });
-    
-        signUpButton.addEventListener('click', () => {
-            container.classList.add('active');
-        });
-    
-        const registerButton = document.getElementById('register');
-        const loginButton = document.getElementById('login');
-    
-        registerButton.addEventListener('click', () => {
-            container.classList.add('active');
-        });
-    
-        loginButton.addEventListener('click', () => {
-            container.classList.remove('active');
-        });
-    
-        function showResetPasswordForm() {
-            document.querySelector('.reset-password').style.display = 'block';
-            document.querySelector('.sign-in').style.display = 'none';
-        }
-    
-        function cancelResetPassword() {
-            window.location.href = "sign-in.html"; // Redirect to sign-in page
-        }
-    
-        function resetPassword(event) {
-            event.preventDefault(); // Prevent form submission
-            // Here you can add code to handle the reset password logic
-            const email = document.getElementById('resetEmail').value;
-            console.log('Reset password for email:', email);
-            // After processing, you may want to hide the reset password form
-            cancelResetPassword();
-        }
-    </script>
-    
 </body>
 </html>
